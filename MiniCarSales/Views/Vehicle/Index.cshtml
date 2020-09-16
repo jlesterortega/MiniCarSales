@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MiniCarSales.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Vehicles</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Engine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wheels)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedBodyType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wheels)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SelectedBodyType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VehicleID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VehicleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VehicleID })
+        </td>
+    </tr>
+}
+
+</table>
